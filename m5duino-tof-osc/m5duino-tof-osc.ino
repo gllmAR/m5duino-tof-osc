@@ -236,6 +236,8 @@ void loop() {
 
   int distance = read_tof_dist();
   int distance_scaled=constrain(map(distance,20,2048,0,255),0,255);
+  
+  set_m5_led(255-distance_scaled,255-distance_scaled,10);
 
   if (distance > 0){
     oscUdp.sendMessage("/tof/raw","ii",ID,distance);
