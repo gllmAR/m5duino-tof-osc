@@ -1,0 +1,11 @@
+#N canvas 48 390 642 555 12;
+#X listbox 42 104 20 0 0 0 - - - 0;
+#X obj 42 79 m5duino-tof-osc 7777 1 1;
+#X obj 40 33 text define -k tof_map;
+#A set 1 scale 41 50 0 1 rename /surfaces/Quad-1/opacity send madmapper \; 1 scale 41 50 1 0 rename /surfaces/Quad-2/opacity send madmapper \; 1 scale 41 50 0 1 rename /surfaces/Quad-3/opacity send madmapper \; 1 scale 41 50 1 0 rename /surfaces/Quad-4/opacity send madmapper \; 1 scale 41 50 0 1 rename /surfaces/Quad-5/opacity send madmapper \;;
+#X obj 41 127 oscmo/fn_getmapping tof_map;
+#X listbox 35 233 38 0 0 0 - - - 0;
+#X obj 35 210 oscmo/oscsend 127.0.0.1 8010 madmapper;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 5 0 4 0;

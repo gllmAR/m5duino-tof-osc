@@ -1,2 +1,2 @@
 # m5duino-tof-osc
-poe bu
+m5 Time Of Flight to OSC
