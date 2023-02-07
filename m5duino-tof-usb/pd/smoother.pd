@@ -1,0 +1,14 @@
+#N canvas 922 103 633 472 12;
+#X obj 31 20 inlet;
+#X obj 31 200 outlet;
+#X obj 31 73 line;
+#X msg 31 47 \$1 33;
+#X obj 175 66 v i\$0;
+#X obj 230 66 array define -yrange 0 255 arr\$0 \$1;
+#X obj 31 101 expr avg("arr\$0") \; arr\$0[i\$0]=$f1 \; if(i\$0>=size("arr\$0") \, i\$0=0 \, i\$0=i\$0) \; i\$0=i\$0+1 \;;
+#X obj 31 172 change;
+#X connect 0 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
